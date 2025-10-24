@@ -23,11 +23,29 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Plant",
+                    "type": "Button",
+                    "id": "3aeaa74e-c7ca-4a41-afa7-c95582a73591",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Water",
+                    "type": "Button",
+                    "id": "6f52353a-2440-4a46-96bb-3621c1a9b158",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "ZQSD",
+                    "name": "WASD",
                     "id": "08fad457-4ee6-416c-86b3-60ba270669a3",
                     "path": "2DVector",
                     "interactions": "",
@@ -40,7 +58,7 @@
                 {
                     "name": "up",
                     "id": "24476109-fcb4-4356-abd3-36a436da2ef7",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -84,7 +102,7 @@
                 {
                     "name": "left",
                     "id": "16be097e-8a2a-4371-b72c-ae9b591cd251",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -144,6 +162,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Touch",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f042a96c-c150-4eff-96bb-9ed1ffaec42d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Plant",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ff28850-fba1-48e8-a1e2-a4735945e7f3",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Water",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
