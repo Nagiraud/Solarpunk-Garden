@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Plantable
   - Occuped
+  - Growing
+  - Shop
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class DroneMovement : MonoBehaviour
     public InputActionReference SprinkleVegetable; // Arroser
 
     // Objets
-    public GameObject ObjectTrigger;
+    private GameObject ObjectTrigger;
     private ParticleSystem ParticleSeed;
 
     // Variables
@@ -107,9 +107,7 @@ public class DroneMovement : MonoBehaviour
     // Action a réaliser selon la box rencontré
     private void OnTriggerEnter(Collider other)
     {
-        ObjectTrigger= other.gameObject;
-
-        
+        ObjectTrigger= other.gameObject;  
     }
 
     private void OnTriggerExit(Collider other)

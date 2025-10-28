@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -9,7 +10,7 @@ public class GrowingArea : MonoBehaviour
     private GameObject seed;       // Légume actuel
     public GameObject prefabVegetable; //prefab
     private GameObject vegetable;       // Légume actuel
-    private Collider CollindingArea;
+    private Collider CollidingArea;
 
     private const string TagPlantable = "Plantable";
     private const string TagOccuped = "Occuped";
@@ -17,7 +18,7 @@ public class GrowingArea : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        CollindingArea = GetComponent<Collider>();
+        CollidingArea = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class GrowingArea : MonoBehaviour
     public void PlantSeed()
     {
         //Instantiation en dessous du centre de la zone
-        seed = Instantiate(prefabSeed, CollindingArea.bounds.center + new Vector3(0, -1, 0), Quaternion.identity); 
+        seed = Instantiate(prefabSeed, CollidingArea.bounds.center + new Vector3(0, -1, 0), Quaternion.identity); 
         this.tag = TagOccuped;
     }
 
@@ -39,7 +40,7 @@ public class GrowingArea : MonoBehaviour
     {
         Destroy(seed);
         //Instantiation en dessous du centre de la zone
-        vegetable = Instantiate(prefabVegetable, CollindingArea.bounds.center + new Vector3(0, -1, 0), Quaternion.identity);
+        vegetable = Instantiate(prefabVegetable, CollidingArea.bounds.center + new Vector3(0, -1, 0), Quaternion.identity);
         this.tag = TagGrowing;
 
         // référence la zone (pour permettre de connaitre l'état actuel du légume dans cette zone)
@@ -51,7 +52,7 @@ public class GrowingArea : MonoBehaviour
     public void PickVegetable()
     {
         Destroy(vegetable);
-        ScoreManager.Instance.AddScore(1);
+        ScoreManager.Instance.AddScore((int)Mathf.Round(1 * transform.localScale.x));
         this.tag = TagPlantable;
     }
 
