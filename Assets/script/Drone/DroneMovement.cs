@@ -12,7 +12,6 @@ public class DroneMovement : MonoBehaviour
 
     // Objets
     private GameObject ObjectTrigger;
-    private ParticleSystem ParticleSeed;
 
     // Variables
     public float speed = 1;
@@ -22,11 +21,14 @@ public class DroneMovement : MonoBehaviour
     private const string TagGrowing = "Growing";
     private const string TagShop = "Shop";
 
+    // Particule
+    public ParticleSystem water_particle;
+    public ParticleSystem seed_particle;
+
 
 
     void Start()
     {
-        ParticleSeed =GetComponent<ParticleSystem>();
         ScoreManager.Instance.UpdateNumberSeed(NumberSeed);
     }
 
@@ -51,7 +53,28 @@ public class DroneMovement : MonoBehaviour
 
         // Avant / Arrière
         transform.Translate(Vector3.forward * Direction.y * Time.deltaTime* speed);
+
+        // empeche de sortir des limites
+        Vector3 currentPos = transform.position;
+
+        // Définir les limites
+        float minX = -17f, maxX = 17f;
+        float minZ = -16f, maxZ = 16.5f;
+
+        // Vérifier chaque axe
+        if (currentPos.x < minX || currentPos.x > maxX || // Haut / bas
+            currentPos.z < minZ || currentPos.z > maxZ)  // Gauche / Droite
+        {
+
+            // Recaler le joueur
+            currentPos.x = Mathf.Clamp(currentPos.x, minX, maxX);
+            currentPos.z = Mathf.Clamp(currentPos.z, minZ, maxZ);
+            transform.position = currentPos;
+
+        }
     }
+
+    
 
     // planter un légume
     void Plant(InputAction.CallbackContext _ctx)
@@ -64,7 +87,7 @@ public class DroneMovement : MonoBehaviour
                     {
                         ObjectTrigger.GetComponent<GrowingArea>().PlantSeed();
                         RemoveSeed(1);
-                        ParticleSeed.Play();
+                        seed_particle.Play();
                     }
                     break;
                 case TagGrowing: // Occupé
@@ -100,8 +123,8 @@ public class DroneMovement : MonoBehaviour
         if (ObjectTrigger != null && ObjectTrigger.tag==TagOccuped)
         {
             ObjectTrigger.GetComponent<GrowingArea>().GrowVegetable();
-            ParticleSeed.Play(); // Particule d'eau
         }
+        water_particle.Play(); // Particule d'eau
     }
 
     // Action a réaliser selon la box rencontré

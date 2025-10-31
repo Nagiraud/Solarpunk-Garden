@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class ScoreManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -29,11 +29,19 @@ public class ScoreManager : MonoBehaviour
     {
         score += nb;
         UpdateScore();
+        if (score > 100)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
     }
     public void RemoveScore(int nb)
     {
         score -= nb;
         UpdateScore();
+        if (score < 0)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
     }
 
     public void UpdateScore()

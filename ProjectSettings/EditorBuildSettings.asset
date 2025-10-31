@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: ab6100dbb3e709a4aa818f07cbd0d6e2
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 606a84371a6b63548b2caa1c38b6b5a4
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: de2a97b7b12dc6b40858dc23a164f392
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c4bd290c14ff7ca429b6a5d28fb0cf5f, type: 3}
   m_UseUCBPForAssetBundles: 0

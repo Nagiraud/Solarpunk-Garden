@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,5 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1468ceeac5bb45748a5f4ffc314c1fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrowingArea
-  prefabSeed: {fileID: 4635461740532168428, guid: 6f3433825b1e4064dbc4dfe8b7481847, type: 3}
-  prefabVegetable: {fileID: 3500902497100997040, guid: 783300b2634098045a4528dcf36208de, type: 3}
+  prefabSeed: {fileID: 6320958302018956987, guid: 6f3433825b1e4064dbc4dfe8b7481847, type: 3}
+  prefabVegetables:
+  - {fileID: 6951786051326069391, guid: c05548a7c7385024d802711bed08d437, type: 3}
+  - {fileID: 2124679972797045249, guid: 2e93d1be73fea1d4e82ee1a1d59062c7, type: 3}
+  - {fileID: 8056000759231120087, guid: 0ffc2b652a0b42245ba54d79383b9caf, type: 3}

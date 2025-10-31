@@ -8,6 +8,9 @@ TagManager:
   - Occuped
   - Growing
   - Shop
+  - carrot
+  - cauliflower
+  - corn
   layers:
   - Default
   - TransparentFX
