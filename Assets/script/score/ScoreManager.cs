@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Gestion du score
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance; // Singleton

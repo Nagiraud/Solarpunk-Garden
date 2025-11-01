@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
+// Gére la pousse du légume
 public class VegetableAction : MonoBehaviour
 {
 
@@ -11,7 +12,7 @@ public class VegetableAction : MonoBehaviour
 
     void Start()
     {
-        growDuration = Random.Range(30f, 300f); // entre 1 et 5 minute
+        growDuration = Random.Range(30f, 300f); // entre 1 et 5 minutes
         transform.localScale = Vector3.zero;
         StartCoroutine(Grow_Coroutine());
     }
