@@ -1,11 +1,10 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class DroneMovement : MonoBehaviour
 {
     // Actions
+    [Header("Input")]
     public InputActionReference droneMove;
     public InputActionReference plantVegetable;
     public InputActionReference SprinkleVegetable; // Arroser
@@ -14,6 +13,7 @@ public class DroneMovement : MonoBehaviour
     private GameObject ObjectTrigger;
 
     // Variables
+    [Header("Variable")]
     public float speed = 1;
     public int NumberSeed=5;
     private const string TagPlantable= "Plantable";
@@ -22,10 +22,14 @@ public class DroneMovement : MonoBehaviour
     private const string TagShop = "Shop";
 
     // Particule
+    [Header("Particule")]
     public ParticleSystem water_particle;
     public ParticleSystem seed_particle;
 
-
+    // Son du drone
+    [Header("Son")]
+    public AudioClip SoundPlant;        
+    public AudioClip SoundSprinkle;
 
     void Start()
     {
@@ -88,6 +92,7 @@ public class DroneMovement : MonoBehaviour
                         ObjectTrigger.GetComponent<GrowingArea>().PlantSeed();
                         RemoveSeed(1);
                         seed_particle.Play();
+                        AudioSource.PlayClipAtPoint(SoundPlant,transform.position,1.0f);
                     }
                     break;
                 case TagGrowing: // Occupé
@@ -124,7 +129,9 @@ public class DroneMovement : MonoBehaviour
         {
             ObjectTrigger.GetComponent<GrowingArea>().GrowVegetable();
         }
-        water_particle.Play(); // Particule d'eau
+        // Peut arroser n'importe ou
+        water_particle.Play(); 
+        AudioSource.PlayClipAtPoint(SoundSprinkle, transform.position,1.0f);
     }
 
     // Action a réaliser selon la box rencontré

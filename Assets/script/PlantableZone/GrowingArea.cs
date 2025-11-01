@@ -6,12 +6,15 @@ using UnityEngine;
 // Gére l'état, la création et la destruction de son légume
 public class GrowingArea : MonoBehaviour
 {
+    [Header("Préfab")]
     public GameObject prefabSeed; //prefab
     private GameObject seed;       // graine actuel
     public GameObject[] prefabVegetables = new GameObject[3];     // légume aléatoire
     private GameObject vegetable;       // Légume actuel
     private Collider CollidingArea;
 
+    [Header("Sound")]
+    public AudioClip SoundExplode;
 
 
     private const string TagPlantable = "Plantable";
@@ -100,6 +103,7 @@ public class GrowingArea : MonoBehaviour
     {
         vegetable = null;
         ScoreManager.Instance.RemoveScore(15);
+        AudioSource.PlayClipAtPoint(SoundExplode, transform.position,1.0f);
         this.tag = TagPlantable;
     }
 }

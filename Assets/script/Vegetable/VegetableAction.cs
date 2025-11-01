@@ -1,9 +1,6 @@
 
 using System.Collections;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static Unity.Collections.AllocatorManager;
 
 public class VegetableAction : MonoBehaviour
 {
@@ -12,7 +9,7 @@ public class VegetableAction : MonoBehaviour
     private float growDuration;
     public float growTimer = 0f;
 
-void Start()
+    void Start()
     {
         growDuration = Random.Range(30f, 300f); // entre 1 et 5 minute
         transform.localScale = Vector3.zero;
@@ -34,9 +31,9 @@ void Start()
         {
             growTimer += Time.deltaTime;
             
-            if(transform.localScale.x < 3.0f)
+            if(transform.localScale.x < 3.0f)// taille max
             {
-                transform.localScale += Vector3.one * 0.1f * Time.deltaTime;
+                transform.localScale += Vector3.one * 0.045f * Time.deltaTime;
             }
             yield return new WaitForEndOfFrame();
         }

@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += nb;
         UpdateScore();
-        if (score > 100)
+        if (score > 1000)
         {
             SceneManager.LoadScene("WinScene");
         }
