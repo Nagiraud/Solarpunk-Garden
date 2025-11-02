@@ -13,6 +13,7 @@ Mais si vous ne ramassez pas assez vite vos fruits, il risque d'exploser, et c'e
 <!-- ABOUT THE PROJECT -->
 ## A propos
 Ce jeu a été réalisé en 3ème année de BUT informatique au Puy-en-Velay.
+
 Il a été réalisé sur Unity.
 
 
@@ -28,8 +29,11 @@ Le jeu est disponible sur Itch.io : [https://nagiraud.itch.io/the-drone-garden](
 ## Contrôles:
 
 ZQSD / flèches directionnelles : Bouger
+
 E :  Planter / ramasser
+
 T:  Arroser
+
 échap : Quitter
 
 
